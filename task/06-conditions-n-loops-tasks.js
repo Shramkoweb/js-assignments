@@ -30,7 +30,17 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if (!(num % 3) && !(num % 5)) {
+        return 'FizzBuzz';
+    } else if (!(num % 5)) {
+        return 'Buzz';
+    }
+    
+    else if (!(num % 3)) {
+        return 'Fizz';
+    }
+
+    return num;
 }
 
 
@@ -46,7 +56,11 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    if(n == 0) {
+        return 1
+    } else {
+        return n * getFactorial(n - 1);
+    }
 }
 
 
@@ -63,7 +77,12 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    let sum = 0;
+    while (n1 <= n2) {
+        sum += n1;
+        n1++;
+    }
+    return sum;
 }
 
 
@@ -209,7 +228,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    return str.split('').reverse().join('');
 }
 
 
@@ -226,7 +245,7 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    return num.toString().split('').reverse().join('');
 }
 
 
@@ -270,13 +289,21 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    while(num > 9) {
+        let sum = 0;
+        while(num != 0 ) {
+            sum  += num % 10;
+            num = Math.floor(num / 10);
+        }
+        num = sum;
+    }
+    return num;
 }
 
 
 /**
  * Returns true if the specified string has the balanced brackets and false otherwise.
- * Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
+ g* Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
  * (in that order), none of which mis-nest.
  * Brackets include [],(),{},<>
  *
