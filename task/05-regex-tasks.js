@@ -31,7 +31,7 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-   throw new Error('Not implemented');
+   return /\{[A-F0-9]{8}-([A-F0-9]{4}-){3}[A-F0-9]{12}\}/i;
 }
 
 
@@ -91,7 +91,7 @@ function getRegexForIPv4() {
  * @return {RegExp}
  */
 function getRegexForSSN() {
-   throw new Error('Not implemented');
+   return /(?!000)\d{3}-(?!00)\d{2}-(?!0000)\d{4}/;
 }
 
 
